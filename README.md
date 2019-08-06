@@ -13,6 +13,21 @@ MQ135
 LCD1602 module
 I2C module (not necessary, but this specific code doesn't work without it)
 
+Wiring:
+MQ135
+
+VCC - 5V
+GND - GND
+AD - A0
+A0 - Do not connect
+
+LCD I2C
+
+VCC - 5V
+GND - GND
+SDA - A4
+SCL - A5
+
 ## Acknowledgments
 
 https://microcontrollerslab.com/interfacing-mq-135-gas-sensor-arduino/
