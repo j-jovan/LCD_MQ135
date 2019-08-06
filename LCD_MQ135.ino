@@ -7,33 +7,34 @@ int digitalValue;
 
 void setup()
 {
-Serial.begin(9600); // sets the serial port to 9600
-pinMode(13, OUTPUT);
-pinMode( 3, INPUT);
+  Serial.begin(9600);
+  pinMode(13, OUTPUT);
+  pinMode(3, INPUT);
 }
 
 void loop()
 {
-sensorValue = analogRead(0); // read analog input pin 0
+  sensorValue = analogRead(0);
 
-digitalValue = digitalRead(2); 
+  //digitalValue = digitalRead(2);
 
-if(sensorValue>400)
-{
-digitalWrite(13, HIGH);
-}
-else
-digitalWrite(13, LOW);
+  //Ukljuci diodu ako vrednost predje 400
+  if (sensorValue > 400)
+  {
+    digitalWrite(13, HIGH);
+  }
+  else
+    digitalWrite(13, LOW);
 
-lcd.begin();
-lcd.backlight();
-lcd.setCursor(0, 0); // First row
-lcd.print("Kvalitet vazduha ");
-lcd.setCursor(0,1);
-lcd.print(sensorValue, DEC);
-lcd.setCursor(3,1);
-lcd.print("PPM");
+  lcd.begin();
+  lcd.backlight();
+  lcd.setCursor(0, 0); // First row
+  lcd.print("Kvalitet vazduha ");
+  lcd.setCursor(4, 1);
+  lcd.print(sensorValue, DEC);
+  lcd.setCursor(7, 1);
+  lcd.print("PPM");
 
-Serial.println(sensorValue, DEC); // prints the value read
-delay(1000); // wait 100ms for next reading
+  Serial.println(sensorValue, DEC);
+  delay(1000);
 }
