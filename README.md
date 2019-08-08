@@ -1,6 +1,8 @@
 # Air Quality Sensor with LCD
 
 What lies before you here is code for checking the Quality of Air using any Arduino & MQ135 sensor and displaying the results on 2x16 LCD
+MQ135 sensor is capable of measuring NH3, NOx, alcohol, Benzene, smoke, CO2, etc. but it does all of that in the same time, so it's not very useful.
+Preheat time for sensor is between 20 seconds and 24 hours, according to various sources.
 
 ## Getting Started
 
